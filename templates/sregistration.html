@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/sregistrations.css')}}">
+    <!-- <link rel="stylesheet" href="home.js"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+</head>
+
+<body>
+
+    <!-- -----start navbar---------------------------- -->
+
+    <div class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="navbar-header">
+                        <button class="navbar-toggle" data-target="#mobile_menu" data-toggle="collapse"><span
+                                class="icon-bar"></span><span class="icon-bar"></span><span
+                                class="icon-bar"></span></button>
+                        <!-- <img src="home img/logo.png" alt="logo" id="logo" height="50px" width="50px"> -->
+                    </div>
+
+                    <div class="navbar-collapse collapse" id="mobile_menu">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="/">Home</a></li>
+                            <li><a href="events page/event.html" class="dropdown-toggle" data-toggle="dropdown">Events
+                                    <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="events">Registration for Event</a></li>
+                                    <li>
+                                        <hr>
+                                    </li>
+                                    <li><a href="events">Organize for Event</a></li>
+                                    <!-- <li><a href="#">About Four</a></li>
+                                    <li><a href="#">About Five</a></li>
+                                    <li><a href="#">About Six</a></li> -->
+                                </ul>
+                            </li>
+                            <!-- <li><a href="#">Welcome</a></li> -->
+                            <li><a href="services">Services</a></li>
+                            <li><a href="subscription">Subscriptions</a></li>
+                            <li><a href="contact">Contact Us</a></li>
+                        </ul>
+
+
+                        <!-- search bar----------------------- -->
+
+
+                        <!-- <ul class="nav navbar-nav">
+                            <li>
+                                <form action="" class="navbar-form">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="search" name="search" id=""
+                                                placeholder="Search Anything Here..." class="form-control">
+                                            <span class="input-group-addon"><span
+                                                    class="glyphicon glyphicon-search"></span></span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul> -->
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="profile"><span class="glyphicon glyphicon-user"></span>
+                                    Profile</a></li>
+                            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                                        class="glyphicon glyphicon-log-in"></span> Login / Sign Up <span
+                                        class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="reg">Teacher</a></li>
+                                    <li><a href="reg">Student</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- -----end------------------ navbar---------------------------- -->
+
+    <!-- ------start      form-------- -->
+
+    <hgroup>
+        <h1>Registrations Form</h1>
+        <div class="devicer"></div>
+        <h3>For Student</h3>
+        <br>
+        <hr>
+        <h4>SportsIds:- Baskteball: BB05, BADMINTON: BD02, CRICKET: C11, FOOTBALL: FB11</h4>
+    </hgroup>
+    <!-- Fields: Student name, student id, phone no, sports id, address -->
+    <form method="POST" >
+        <div class="group">
+            <input type="text" name="studentName"><span class="highlight"></span><span class="bar"></span>
+            <label>Student_Name</label>
+        </div>
+        <div class="group">
+            <input type="text" name="student_id"><span class="highlight"></span><span class="bar"></span>
+            <label>Student_Id</label>
+        </div>
+        <div class="group">
+            <input type="number" name="phone"><span class="highlight"></span><span class="bar"></span>
+            <label>Phone_No.</label>
+        </div>
+        <div class="group">
+            <input type="text" name="sportID"><span class="highlight"></span><span class="bar"></span>
+            <label>Sports_Id</label>
+        </div>
+        <div class="group">
+            <input type="text" name="addr"><span class="highlight"></span><span class="bar"></span>
+            <label>Address</label>
+        </div>
+        <button type="submit" class="button buttonBlue">Subscribe
+            <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+        </button>
+    </form>
+    <footer>
+        <p>Already have account ?<a href="profile" >Login</a></p>
+    </footer>
+
+
+     <!-- -------------------foooter--------- -->
+
+
+     
+
+    <script>
+        $(window, document, undefined).ready(function () {
+
+            $('input').blur(function () {
+                var $this = $(this);
+                if ($this.val())
+                    $this.addClass('used');
+                else
+                    $this.removeClass('used');
+            });
+
+            var $ripples = $('.ripples');
+
+            $ripples.on('click.Ripples', function (e) {
+
+                var $this = $(this);
+                var $offset = $this.parent().offset();
+                var $circle = $this.find('.ripplesCircle');
+
+                var x = e.pageX - $offset.left;
+                var y = e.pageY - $offset.top;
+
+                $circle.css({
+                    top: y + 'px',
+                    left: x + 'px'
+                });
+
+                $this.addClass('is-active');
+
+            });
+
+            $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAnimationEnd', function (e) {
+                $(this).removeClass('is-active');
+            });
+
+        });
+    </script>
+
+
+</body>

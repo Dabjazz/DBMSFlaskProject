@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Form</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/eventstyle.css')}}">
+    <!-- <link rel="stylesheet" href="subd.js"> -->
+    <!-- <link rel="stylesheet" href="home.js"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+    <!-- -----start navbar---------------------------- -->
+
+    <div class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="navbar-header">
+                        <button class="navbar-toggle" data-target="#mobile_menu" data-toggle="collapse"><span
+                                class="icon-bar"></span><span class="icon-bar"></span><span
+                                class="icon-bar"></span></button>
+                        <!-- <img src="home img/logo.png" alt="logo" id="logo" height="50px" width="50px"> -->
+                    </div>
+
+                    <div class="navbar-collapse collapse" id="mobile_menu">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="/">Home</a></li>
+                            <li><a href="events page/event.html" class="dropdown-toggle" data-toggle="dropdown">Events
+                                    <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="events">Registration for Event</a></li>
+                                    <li>
+                                        <hr>
+                                    </li>
+                                    <li><a href="events">Organize for Event</a></li>
+                                    <!-- <li><a href="#">About Four</a></li>
+                                    <li><a href="#">About Five</a></li>
+                                    <li><a href="#">About Six</a></li> -->
+                                </ul>
+                            </li>
+                            <!-- <li><a href="#">Welcome</a></li> -->
+                            <li><a href="services">Services</a></li>
+                            <li><a href="subscription">Subscriptions</a></li>
+                            <li><a href="contact">Contact Us</a></li>
+                        </ul>
+
+
+                        <!-- search bar----------------------- -->
+
+
+                        <!-- <ul class="nav navbar-nav">
+                            <li>
+                                <form action="" class="navbar-form">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="search" name="search" id=""
+                                                placeholder="Search Anything Here..." class="form-control">
+                                            <span class="input-group-addon"><span
+                                                    class="glyphicon glyphicon-search"></span></span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul> -->
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="profile"><span class="glyphicon glyphicon-user"></span>
+                                    Profile</a></li>
+                            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                                        class="glyphicon glyphicon-log-in"></span> Login / Sign Up <span
+                                        class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="reg">Teacher</a></li>
+                                    <li><a href="regs">Student</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- -----end------------------ navbar---------------------------- -->
+
+    <!-- ------------start                    Subscriptin form-------- -->
+
+
+    <div id="back">
+        <!-- <canvas id="canvas" class="canvas-back"></canvas>
+        <div class="backRight">
+        </div>
+        <div class="backLeft">
+        </div> -->
+        <img src="{{ url_for('static',filename='img/sports_background_athletic_icons_cartoon_characters_6836432.jpg')}}" alt="" style="height: 93%;
+        width: 51%;">
+    </div>
+
+    <div id="slideBox">
+        <div class="topLayer">
+            <!-- <div class="left">
+                <div class="content">
+                    <h2>Sign Up</h2>
+                    <form id="form-signup" method="post" onsubmit="return false;">
+                        <div class="form-element form-stack">
+                            <label for="email" class="form-label">Email</label>
+                            <input id="email" type="email" name="email">
+                        </div>
+                        <div class="form-element form-stack">
+                            <label for="username-signup" class="form-label">Username</label>
+                            <input id="username-signup" type="text" name="username">
+                        </div>
+                        <div class="form-element form-stack">
+                            <label for="password-signup" class="form-label">Password</label>
+                            <input id="password-signup" type="password" name="password">
+                        </div>
+                        <div class="form-element form-checkbox">
+                            <input id="confirm-terms" type="checkbox" name="confirm" value="yes" class="checkbox">
+                            <label for="confirm-terms">I agree to the <a href="#">Terms of Service</a> and <a
+                                    href="#">Privacy Policy</a></label>
+                        </div>
+                        <div class="form-element form-submit">
+                            <button id="signUp" class="signup" type="submit" name="signup">Sign up</button>
+                            <button id="goLeft" class="signup off">Log In</button>
+                        </div>
+                    </form>
+                </div>
+            </div> -->
+            <div class="right">
+                <div class="content"> <!-- Data from here will go to eventr-->
+                    <h1>REGISTER for <span style="color:#673AB7">Event</span> </h1>
+                    <!-- <h2>Login</h2> -->
+                    <form id="form-login" method="post" >
+                        <div class="form-element form-stack"><!-- USE JINJA templating here for event ID-->
+                            <label for="username-login" class="form-label">EVENT ID</label>
+                            <input id="username-login" type="text" name="evid">
+                        </div>
+                        <div class="form-element form-stack"><!-- USE JINJA templating here for event ID-->
+                            <label for="username-login" class="form-label">EVENT NAME</label>
+                            <input id="username-login" type="text" name="ename">
+                        </div>
+                        <div class="form-element form-stack"><!-- USE JINJA templating here for event NAME-->
+                            <label for="username-login" class="form-label">StudentID</label>
+                            <input id="username-login" type="text" name="stid">
+                        </div>
+                        <div class="form-element form-stack">
+                            <label for="password-login" class="form-label">sportsID</label>
+                            <input id="password-login" type="text" name="spid">
+                        </div>
+                        <div class="form-element form-stack">
+                            <label for="password-login" class="form-label">coachID</label>
+                            <input id="password-login" type="text" name="cid">
+                        </div>
+                        <div class="form-element form-submit">
+                            <button id="logIn" class="login" type="submit">Register</button>
+                            <!-- <button id="goRight" class="login off" name="signup">Sign Up</button> -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+
+</body>
